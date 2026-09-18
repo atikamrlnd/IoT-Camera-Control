@@ -1,63 +1,63 @@
-# 📷 IoT Camera Control Studio
+# IoT Camera Control Studio
 
-Aplikasi kamera berbasis **Python, OpenCV, dan Tkinter** untuk menampilkan live preview kamera, mengatur parameter gambar secara software, serta mengambil foto single maupun burst capture.
+A camera application built with **Python, OpenCV, and Tkinter** for displaying a live camera preview, adjusting image parameters via software, and capturing both single and burst photos.
 
-## ✨ Fitur
+## Features
 
-* 🎥 Live camera preview secara real-time
-* 🖼️ Pilihan resolusi:
+* Real-time live camera preview
+* Resolution options:
 
   * `640x480`
   * `1280x720 (HD)`
   * `1920x1080 (FHD)`
-* ☀️ Pengaturan **Exposure / Brightness** secara software
-* 🔆 Pengaturan **ISO / Gain Multiplier** secara software
-* 📸 Single capture menggunakan `Spacebar`
-* 🔄 Burst capture dengan menahan `Spacebar`
-* 💾 Foto otomatis disimpan ke folder `captured_images`
-* ⌨️ `ESC` untuk keluar dari aplikasi
-* 🔄 Reset parameter kamera ke kondisi normal
+* Software-based **Exposure / Brightness** control
+* Software-based **ISO / Gain Multiplier** control
+* Single capture using `Spacebar`
+* Burst capture by holding `Spacebar`
+* Photos automatically saved to the `captured_images` folder
+* `ESC` to exit the application
+* Reset camera parameters back to normal
 
-## 📁 Struktur Project
+## Project Structure
 
 ```text
 project/
 │
 ├── .venv/
-│   └── Virtual environment Python
+│   └── Python virtual environment
 │
 ├── captured_images/
-│   └── Folder penyimpanan hasil foto
+│   └── Folder for saved photos
 │
 ├── camera.py
-│   └── Program utama aplikasi kamera
+│   └── Main camera application
 │
 └── README.md
-    └── Dokumentasi project
+    └── Project documentation
 ```
 
-## 🛠️ Teknologi
+## Tech Stack
 
 * **Python 3**
-* **OpenCV** — akses kamera dan image processing
+* **OpenCV** — camera access and image processing
 * **Tkinter** — graphical user interface
-* **Pillow (PIL)** — menampilkan frame OpenCV pada Tkinter
-* **NumPy** — pemrosesan array gambar
+* **Pillow (PIL)** — displaying OpenCV frames in Tkinter
+* **NumPy** — image array processing
 
-## 🚀 Instalasi
+## Installation
 
-Pastikan **Python 3** sudah terinstall di komputer.
+Make sure **Python 3** is installed on your computer.
 
-### 1. Clone repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/atikamrlnd/IoT-Camera-Control.git
 cd IoT-Camera-Control
 ```
 
-### 2. Buat virtual environment
+### 2. Create a virtual environment
 
-Jika `.venv` belum tersedia:
+If `.venv` doesn't exist yet:
 
 **Windows:**
 
@@ -71,7 +71,7 @@ python -m venv .venv
 python3 -m venv .venv
 ```
 
-### 3. Aktifkan virtual environment
+### 3. Activate the virtual environment
 
 **Windows — Command Prompt:**
 
@@ -91,111 +91,111 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Setelah berhasil, biasanya terminal akan menampilkan:
+Once activated, your terminal will usually show:
 
 ```text
 (.venv)
 ```
 
-### 4. Install dependency
+### 4. Install dependencies
 
 ```bash
 pip install opencv-python pillow numpy
 ```
 
-> `tkinter` biasanya sudah tersedia bersama instalasi Python pada Windows. Pada beberapa distro Linux, Tkinter perlu di-install melalui package manager sistem.
+> `tkinter` is usually bundled with Python on Windows. On some Linux distros, Tkinter needs to be installed separately via the system package manager.
 
-## ▶️ Menjalankan Aplikasi
+## Running the Application
 
-Pastikan virtual environment sudah aktif, kemudian jalankan:
+Make sure the virtual environment is active, then run:
 
 ```bash
 python camera.py
 ```
 
-Jika pada sistem menggunakan `python3`:
+If your system uses `python3`:
 
 ```bash
 python3 camera.py
 ```
 
-Jendela **IoT Camera Control Studio** akan terbuka dan kamera default komputer akan digunakan.
+The **IoT Camera Control Studio** window will open and use your computer's default camera.
 
-## 🎮 Kontrol Kamera
+## Camera Controls
 
-| Kontrol          | Fungsi                                       |
-| ---------------- | -------------------------------------------- |
-| `Spacebar` tekan | Mengambil satu foto                          |
-| `Spacebar` tahan | Burst capture                                |
-| `ESC`            | Keluar aplikasi                              |
-| Resolution       | Mengubah resolusi kamera                     |
-| Exposure         | Mengatur brightness/exposure secara software |
-| ISO / Gain       | Mengatur penguatan brightness gambar         |
-| Reset Parameter  | Mengembalikan parameter ke nilai normal      |
+| Control          | Function                                  |
+| ---------------- | ------------------------------------------ |
+| `Spacebar` press | Take a single photo                        |
+| `Spacebar` hold  | Burst capture                              |
+| `ESC`            | Exit the application                       |
+| Resolution       | Change camera resolution                   |
+| Exposure         | Adjust brightness/exposure via software    |
+| ISO / Gain       | Adjust image brightness gain               |
+| Reset Parameter  | Restore parameters to their default values |
 
-## 📸 Hasil Foto
+## Captured Photos
 
-Foto yang diambil akan otomatis disimpan pada:
+Captured photos are automatically saved to:
 
 ```text
 captured_images/
 ```
 
-Format nama file:
+File naming format:
 
 ```text
 IMG_YYYYMMDD_HHMMSS_mmm.jpg
 ```
 
-Contoh:
+Example:
 
 ```text
 IMG_20260918_081530_125.jpg
 ```
 
-## ⚠️ Troubleshooting
+## Troubleshooting
 
-### Kamera tidak ditemukan
+### Camera not found
 
-Jika muncul pesan:
+If you see the message:
 
 ```text
-Kamera tidak ditemukan atau gagal diakses!
+Camera not found or failed to access!
 ```
 
-pastikan:
+make sure:
 
-1. Kamera terhubung dengan komputer.
-2. Kamera tidak sedang digunakan aplikasi lain seperti Zoom, Google Meet, atau aplikasi kamera lainnya.
-3. Permission kamera sudah diberikan kepada Python/aplikasi.
-4. Coba tutup aplikasi lain yang sedang menggunakan kamera.
-5. Pastikan kamera terdeteksi oleh sistem operasi.
+1. The camera is connected to the computer.
+2. The camera isn't being used by another application like Zoom, Google Meet, or another camera app.
+3. Camera permission has been granted to Python/the application.
+4. Try closing other applications currently using the camera.
+5. Confirm the camera is detected by the operating system.
 
-### Tidak bisa mengaktifkan `.venv` di PowerShell
+### Can't activate `.venv` in PowerShell
 
-Jika PowerShell menolak menjalankan script, buka PowerShell sebagai user yang sesuai dan jalankan:
+If PowerShell refuses to run the script, open PowerShell as the appropriate user and run:
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
 
-Kemudian aktifkan kembali:
+Then activate it again:
 
 ```powershell
 .venv\Scripts\Activate.ps1
 ```
 
-## 📌 Catatan
+## Notes
 
-Parameter **Exposure** dan **ISO / Gain** pada aplikasi ini diproses pada gambar setelah frame diperoleh dari kamera. Jadi pengaturan tersebut merupakan **software image processing**, bukan perubahan langsung terhadap shutter speed atau ISO hardware kamera.
+The **Exposure** and **ISO / Gain** parameters in this application are processed on the image after the frame is captured from the camera. This means these adjustments are **software-based image processing**, not direct changes to the camera's hardware shutter speed or ISO.
 
-Resolusi yang dipilih juga bergantung pada kemampuan kamera dan driver yang digunakan. Kamera dapat mengembalikan resolusi berbeda apabila resolusi yang diminta tidak didukung oleh hardware.
+The selected resolution also depends on the camera's capabilities and the driver in use. The camera may return a different resolution if the requested one isn't supported by the hardware.
 
 ---
 
-## 👨‍💻 Development
+## Development
 
-Project ini dibuat sebagai aplikasi sederhana untuk **camera control, image processing, dan GUI berbasis Python**.
+This project was built as a simple application for **camera control, image processing, and a Python-based GUI**.
 
 ```text
 Python
